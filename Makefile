@@ -18,3 +18,9 @@ interface.o: interface.cpp interface.h
 
 clean:
 	rm -f $(OBJS) $(TARGET)
+
+test: test_interface.cpp interface.cpp interface.h
+	$(CXX) $(CXXFLAGS) -o test_interface test_interface.cpp interface.cpp
+
+run_test: test
+	./test_interface
